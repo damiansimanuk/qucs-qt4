@@ -1,4 +1,4 @@
-#This is the QT4 port of QUCS. 
+#This is qucs-qt4, the QT4 port of QUCS. 
 
 QUCS is a circuit simulator that is far nicer than SPICE and runs natively on Linux.
 
@@ -7,15 +7,7 @@ all the parts of QUCS into one place so that its development can be continued.
 
 This repository is cloned from the qucsqt4 project from tuxfamily that appears to have been abandoned in 2010. See the top-level project README.md for further instructions.
 
-
-##GOALS
-
-Get qucs back into the Debian repositories (as well as Debian derivatives (Mint/Ubuntu e.t.c))
-
-
-##TODO
-
-* Build debian package
+The original README has been named README.old
 
 ##Building this code
 
@@ -24,4 +16,4 @@ Get qucs back into the Debian repositories (as well as Debian derivatives (Mint/
     make
     sudo make install
     
-NOTE: You must install the qucscomponents as well.
+NOTE: You must install the qucs-components as well.
