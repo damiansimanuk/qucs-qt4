@@ -1,0 +1,12 @@
+*~
+DS_Store
+dox
+.svn
+CVS
+*.log
+*.aux
+*.dvi
+*.toc
+*.idx
+*.ind
+*.o

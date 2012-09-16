@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="DC feed" version="0.1.0" label="L">
+   <displaytext>
+      <lang lang="C">DC feed</lang>
+      <lang lang="fr">Polarisation</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">Un component that block AC and allow DC to pass</lang>
+      <lang lang="fr">Un composant permettant de laisser passer le courant continue et 
+                      bloquant le courant alternatif</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/dcfeed-isolike.svg">
+       <port name="+" x="-20" y="0"/>
+       <port name="-" x="20" y="0"/>
+     </schematic>
+     <schematic name="long" href="svg/dcfeed-long.svg">
+       <port name="+" x="-30" y="0"/>
+       <port name="-" x="30" y="0"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/dcfeed-qucs0.svg">
+       <port name="+" x="-30" y="0"/>
+       <port name="-" x="30" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="+" type="analog"/>
+      <port name="-" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="L" type="double" unit="H" visible="false"
+		   default="1e-6">
+	   <description>
+	     <lang lang="C">Inductance used for transient simulation</lang>
+	     <lang lang="ca">Inductancia para simulación transitoria</lang>
+	     <lang lang="cs">Induktivita pro přechodovou simulaci</lang>
+	     <lang lang="de">Induktivität für die transientensimulation</lang>
+	     <lang lang="es">Inductanciapara simulación transitoria</lang>
+	     <lang lang="fr">inductance utilisé pour la simulation transitoire</lang>
+	     <lang lang="it">Induttanza  per simulazione transitorio: induttanza in Henry</lang>
+	     <lang lang="pl">Indukcyjność dla symulacji czasowej</lang>
+	     <lang lang="ru">индуктивность для моделирования переходных процессов</lang>
+	     <lang lang="sv">Induktans för transientsimulering</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

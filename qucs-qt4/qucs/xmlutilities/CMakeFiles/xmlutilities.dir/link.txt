@@ -1,0 +1,2 @@
+/usr/bin/ar cr libxmlutilities.a  CMakeFiles/xmlutilities.dir/QRelaxNGvalidator.cpp.o CMakeFiles/xmlutilities.dir/QXmlStreamReaderExt.cpp.o CMakeFiles/xmlutilities.dir/QXsltTransformer.cpp.o CMakeFiles/xmlutilities.dir/validators.cpp.o CMakeFiles/xmlutilities.dir/transformers.cpp.o CMakeFiles/xmlutilities.dir/xmlutilities.cpp.o
+/usr/bin/ranlib libxmlutilities.a

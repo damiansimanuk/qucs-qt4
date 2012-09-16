@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Gradient Module -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<!-- datatypes -->
+
+<define name="SVG.NumberOrPercentage.datatype">
+ <text/>
+</define>
+
+<!-- class -->
+
+<define name="SVG.Gradient.extra.class">
+ <empty/>
+</define>
+
+<define name="SVG.Gradient.class">
+ <choice>
+  <ref name="SVG.linearGradient"/>
+  <ref name="SVG.radialGradient"/>
+  <ref name="SVG.Gradient.extra.class"/>
+ </choice>
+</define>
+
+<!-- attributes -->
+
+<define name="SVG.Gradient.extra.attrib">
+ <empty/>
+</define>
+
+<define name="SVG.Gradient.attrib" combine="interleave">
+ <optional>
+  <attribute name="stop-color">
+   <ref name="SVG.SVGColor.datatype"/>
+  </attribute>
+ </optional>
+ <optional>
+  <attribute name="stop-opacity">
+   <ref name="SVG.OpacityValue.datatype"/>
+  </attribute>
+ </optional>
+ <ref name="SVG.Gradient.extra.attrib"/>
+</define>
+
+<!-- elements -->
+
+<define name="SVG.linearGradient">
+ <element name="linearGradient">
+  <zeroOrMore>
+   <ref name="SVG.Description.class"/>
+  </zeroOrMore>
+  <zeroOrMore>
+   <choice>
+    <ref name="SVG.stop"/>
+    <ref name="SVG.animate"/>
+    <ref name="SVG.set"/>
+    <ref name="SVG.animateTransform"/>
+   </choice>
+  </zeroOrMore>
+  <ref name="SVG.Core.attrib"/>
+  <ref name="SVG.Style.attrib"/>
+  <ref name="SVG.Color.attrib"/>
+  <ref name="SVG.Gradient.attrib"/>
+  <ref name="SVG.XLink.attrib"/>
+  <ref name="SVG.External.attrib"/>
+  <optional>
+   <attribute name="x1">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="y1">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="x2">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="y2">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="gradientUnits">
+    <choice>
+     <value>userSpaceOnUse</value>
+     <value>objectBoundingBox</value>
+    </choice>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="gradientTransform">
+    <ref name="SVG.TransformList.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="spreadMethod">
+    <choice>
+     <value>pad</value>
+     <value>reflect</value>
+     <value>repeat</value>
+    </choice>
+   </attribute>
+  </optional>
+ </element>
+</define>
+
+<define name="SVG.radialGradient">
+ <element name="radialGradient">
+  <zeroOrMore>
+   <ref name="SVG.Description.class"/>
+  </zeroOrMore>
+  <zeroOrMore>
+   <choice>
+    <ref name="SVG.stop"/>
+    <ref name="SVG.animate"/>
+    <ref name="SVG.set"/>
+    <ref name="SVG.animateTransform"/>
+   </choice>
+  </zeroOrMore>
+  <ref name="SVG.Core.attrib"/>
+  <ref name="SVG.Style.attrib"/>
+  <ref name="SVG.Color.attrib"/>
+  <ref name="SVG.Gradient.attrib"/>
+  <ref name="SVG.XLink.attrib"/>
+  <ref name="SVG.External.attrib"/>
+  <optional>
+   <attribute name="cx">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="cy">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+   <optional>
+   <attribute name="r">
+    <ref name="SVG.Length.datatype"/>
+   </attribute>
+  </optional>
+ <optional>
+   <attribute name="fx">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="fy">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="gradientUnits">
+    <choice>
+     <value>userSpaceOnUse</value>
+     <value>objectBoundingBox</value>
+    </choice>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="gradientTransform">
+    <ref name="SVG.TransformList.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="spreadMethod">
+    <choice>
+     <value>pad</value>
+     <value>reflect</value>
+     <value>repeat</value>
+    </choice>
+   </attribute>
+  </optional>
+ </element>
+</define>
+
+<define name="SVG.stop">
+ <element name="stop">
+  <zeroOrMore>
+   <choice>
+    <ref name="SVG.animate"/>
+    <ref name="SVG.set"/>
+    <ref name="SVG.animateColor"/>
+   </choice>
+  </zeroOrMore>
+  <ref name="SVG.Core.attrib"/>
+  <ref name="SVG.Style.attrib"/>
+  <ref name="SVG.Color.attrib"/>
+  <ref name="SVG.Gradient.attrib"/>
+  <attribute name="offset">
+   <ref name="SVG.NumberOrPercentage.datatype"/>
+  </attribute>
+ </element>
+</define>
+
+</grammar>

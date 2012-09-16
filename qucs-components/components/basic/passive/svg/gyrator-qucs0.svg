@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<!--
+Copyright (C) 2008 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<!-- TODO use xref if available -->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.2" baseProfile="tiny"
+     viewBox="-30 -35 60 70">
+   <defs>
+      <style type="text/css"><![CDATA[
+                                      g {
+                                      stroke: black;
+                                      fill: none;
+                                      stroke-width: 1;
+                                      }
+                                      ]]>
+      </style>
+   </defs>
+   <desc>gyrator</desc>
+   <g id="gyrator" class="outline">
+     <path d="M -30 -30 h 18 v 60 h -18"/>
+     <path d="M 30 -30 h -18 v 60 h 18"/>
+     <path d="M -12 -10 a 10 10 0 0 1 0 20" />
+     <path d="M 12 -10 a 10 10 0 0 0 0 20" />
+   </g>
+   <g id="enclosure" class="enclosure">
+     <rect x="-22" y="-22" width="44" height="44"/>
+   </g>
+</svg>

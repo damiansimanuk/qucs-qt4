@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Document Events Attribute Module -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<define name="SVG.onunload.attrib">
+ <optional>
+  <attribute name="onunload">
+   <ref name="SVG.Script.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.onabort.attrib">
+ <optional>
+  <attribute name="onabort">
+   <ref name="SVG.Script.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.onerror.attrib">
+ <optional>
+  <attribute name="onerror">
+   <ref name="SVG.Script.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.onresize.attrib">
+ <optional>
+  <attribute name="onresize">
+   <ref name="SVG.Script.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.onscroll.attrib">
+ <optional>
+  <attribute name="onscroll">
+   <ref name="SVG.Script.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.onzoom.attrib">
+ <optional>
+  <attribute name="onzoom">
+   <ref name="SVG.Script.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.DocumentEvents.extra.attrib">
+ <empty/>
+</define>
+
+<define name="SVG.DocumentEvents.attrib" combine="interleave">
+ <ref name="SVG.onunload.attrib"/>
+ <ref name="SVG.onabort.attrib"/>
+ <ref name="SVG.onerror.attrib"/>
+ <ref name="SVG.onresize.attrib"/>
+ <ref name="SVG.onscroll.attrib"/>
+ <ref name="SVG.onzoom.attrib"/>
+ <ref name="SVG.DocumentEvents.extra.attrib"/>
+</define>
+
+
+</grammar>

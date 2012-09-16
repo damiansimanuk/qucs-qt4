@@ -1,0 +1,60 @@
+qucscomponent.rng 
+
+Copyright (C) 2007 Roucaries Bastien roucaries.bastien+qucs@gmail.com
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+ 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+  
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+  
+===========================================================
+svg11-basic.rng svg11.rng svg11-tiny.rng svg-animation.rng
+svg-animevents-attrib.rng svg-basic-attrib.rng svg-basic-clip.rng
+svg-basic-filter.rng svg-basic-font.rng svg-basic-graphics-attrib.rng
+svg-basic-model.rng svg-basic-paint-attrib.rng svg-basic-structure.rng
+svg-basic-text.rng svg-clip.rng svg-conditional.rng
+svg-container-attrib.rng svg-core-attrib.rng svg-cursor.rng
+svg-datatypes.rng svg-default-attrib.rng svg-docevents-attrib.rng
+svg-extensibility.rng svg-extresources-attrib.rng svg-filter.rng
+svg-font.rng svg-gradient.rng svg-graphevents-attrib.rng
+svg-graphics-attrib.rng svg-hyperlink.rng svg-image.rng svg-marker.rng
+svg-mask.rng svg-opacity-attrib.rng svg-paint-attrib.rng
+svg-pattern.rng svg-profile.rng svg-script.rng svg-shape.rng
+svg-structure.rng svg-style.rng svg-text.rng svg-tiny-model.rng
+svg-viewport-attrib.rng svg-view.rng svg-xlink-attrib.rng
+
+Downloaded from http://yupotan.sppd.ne.jp/relax-ng/svg11/
+
+Under following MIT licence
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .

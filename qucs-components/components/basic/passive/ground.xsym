@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Ground" version="0.1.0" label="GND">
+   <displaytext>
+      <lang lang="C">Ground</lang>
+      <lang lang="ca">Tierra</lang>
+      <lang lang="cs">Země</lang>
+      <lang lang="de">Masse</lang>
+      <lang lang="es">Tierra</lang>
+      <lang lang="fr">Masse</lang>
+      <lang lang="he">אדמה</lang>
+      <lang lang="hu">Föld</lang>
+      <lang lang="it">Terra</lang>
+      <lang lang="jp">グラウンド</lang>
+      <lang lang="pl">Masa</lang>
+      <lang lang="pt">Terra</lang>
+      <lang lang="ro">Masă</lang>
+      <lang lang="ru">Земля</lang>
+      <lang lang="sv">Jord</lang>
+      <lang lang="tr">Toprak</lang>
+      <lang lang="uk">Земля</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">This node is the reference potential</lang>
+      <lang lang="fr">Ce nœud est le potentiel de référence</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/ground-isolike.svg">
+       <port name="0" x="0" y="0"/>
+     </schematic>
+     <schematic name="variant 1" href="svg/ground-variant-1.svg">
+       <port name="0" x="0" y="0"/>
+     </schematic>
+     <schematic name="variant 2" href="svg/ground-variant-2.svg">
+       <port name="0" x="0" y="0"/>
+     </schematic>
+     <!-- I am lazy qucs and isolike are the same -->
+     <schematic name="qucs0" href="svg/ground-isolike.svg">
+       <port name="0" x="0" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="0" type="analog"/>
+   </ports>
+
+   <properties>
+   </properties>
+</component>

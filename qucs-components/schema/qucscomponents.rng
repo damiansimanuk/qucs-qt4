@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
+
+Copyright (C) 2007 Roucaries Bastien roucaries.bastien+qucs@gmail.com
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+ 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+  
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+	 xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+	 xmlns:rng="http://relaxng.org/ns/structure/1.0"
+	 datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+  <a:documentation>
+	This schema is used to describe a document. It is used both by the gui
+	of qucs and by the qucs xml scheamtic to netlist converter.
+
+	A component contain is mainly an association of schematic and properties 
+	list of the component.
+  </a:documentation>
+  
+  <start>
+    <element name="component">
+      <a:documentation>
+	This element is used to describe a component. It will be used to 
+	print schematic symbol or to get properties used by the component.
+      </a:documentation>
+
+      <!-- Attributes -->
+      <attribute name ="name">
+	<a:documentation>
+	  Internal name of the component. Should be unique in a library.
+	  It should be a token in the sense of XMLSchema-datatypes.
+	</a:documentation>
+	<data type="token"/>
+      </attribute>
+      <attribute name ="version">
+	<a:documentation>
+	  Version of the component specification
+	</a:documentation>
+	<value>0.1.0</value>
+      </attribute>
+      <attribute name ="label">
+	<a:documentation>
+	  Label used for component. 
+	  It should be a token in the sense of XMLSchema-datatypes.
+	  Case sensitive.
+	</a:documentation>
+	<data type="token"/>
+      </attribute>
+
+      <!-- Various help -->
+      <element name="displaytext">
+	<a:documentation>
+	This element is used to represent a string which will be used to
+	represent the component in sidebar, dialog boxes, library...
+	</a:documentation>
+	<ref name="localisation"/>
+      </element>
+      <element name="description">
+	<a:documentation>
+	  This element is used to give a short description of the
+	  component. This can be regarded as help text. 
+	</a:documentation>
+	<ref name="localisation"/>
+      </element>
+
+     <!-- Schematics -->
+     <element name="schematics">
+       <a:documentation>
+	 This element descibes the different schematic associated to
+	 components
+       </a:documentation>
+       <attribute name="default">
+	 <a:documentation>
+	   Default schematic
+	 </a:documentation>
+	 <data type="token"/>
+       </attribute>
+       <oneOrMore>
+	 <ref name="internalexternalsvg"/>
+       </oneOrMore>
+     </element>
+
+     <!-- port  -->
+     <element name="ports">
+       <a:documentation>
+	 This element is used to represent the ports.
+       </a:documentation>
+       <zeroOrMore>
+	 <ref name="port"/>
+       </zeroOrMore>
+     </element>
+
+     <!-- properties -->
+     <element name="properties">
+       <zeroOrMore>
+	 <ref name="property"/>
+       </zeroOrMore>
+     </element>
+    </element>
+  </start>
+  
+  <!-- Localisation block -->
+  <define name="localisation">
+    <a:documentation>
+      This define provide a way to express localisation
+    </a:documentation>
+    <!-- Default language -->
+    <element name="lang">
+      <a:documentation> 
+	Default language
+      </a:documentation>
+      <attribute name="lang">
+	<a:documentation>
+	  Default language is C
+	</a:documentation>
+	<value>C</value>
+      </attribute>
+      <text/>
+    </element>
+    <!-- Additionnal language (optionnal) -->
+    <zeroOrMore>
+      <element name="lang">
+	<a:documentation> 
+	  String used for this localisation property
+	</a:documentation>
+	<attribute name="lang">
+	  <a:documentation>
+	    Language used for this description
+	  </a:documentation>
+	  <data type="language"/>
+	</attribute>
+	<text/>
+      </element>
+    </zeroOrMore>
+  </define>
+
+  <!-- internal or external svg -->
+  <define name="internalexternalsvg">
+    <a:documentation>
+	 This element is used to represent the schematic representation of the
+	 component. It infact refers to svg. There are two ways to do
+	 this. Firstly the svg can be described here only. In that case the
+	 attribute external should be set the URI of the svg file. 
+	 The second possibility is to include directly svg
+    </a:documentation>
+    <element name="schematic">
+      <attribute name="name">
+	  <a:documentation>
+	    Name of the schematic for printing in gui
+	  </a:documentation>
+	  <data type="token"/>
+      </attribute>
+      <zeroOrMore>
+	<ref name="schematicport"/>
+      </zeroOrMore>
+      <choice>
+	<attribute name="href">
+	  <a:documentation>
+	    External svg file
+	  </a:documentation>
+	  <data type="anyURI"/>
+	</attribute>
+	<externalRef href="svg11.rng"/>
+      </choice>
+    </element>
+  </define>
+
+  <!-- schematic port ie coordinate -->
+  <define name="schematicport">
+    <element name="port">
+      <attribute name="name">
+	<a:documentation>
+	  Name of the port
+	</a:documentation>
+	<data type="token"/>
+      </attribute>
+      <attribute name="x">
+	<a:documentation>
+	  Abscissa of the port in svg system
+	</a:documentation>
+	<data type="double"/>
+      </attribute>
+      <attribute name="y">
+	<a:documentation>
+	  Ordinate of the port in svg system
+	</a:documentation>
+	<data type="double"/>
+      </attribute>
+    </element>
+  </define>
+    
+
+  <!-- Port -->
+  <define name="port">
+    <element name="port">
+      <a:documentation>
+	This element is used to represent port. Port is logical unit used to
+	determine connections.
+      </a:documentation>
+      <attribute name="name">
+	<a:documentation>
+	  This string is used to identify nodes.
+	</a:documentation>
+	<data type="token"/>
+      </attribute>
+      <attribute name="type">
+	<a:documentation>
+	  Kind of port: analog, digital, digitalbus
+	</a:documentation>
+	<choice>
+	  <value>analog</value>
+	  <value>digital</value>
+	<value>digitalbus</value>
+	</choice>
+      </attribute>
+    </element>
+  </define>
+
+  <!-- Property -->
+  <define name="property">
+    <element name="property">
+      <attribute name="name">
+	<data type="token"/>
+      </attribute>
+      <attribute name="type">
+      <choice>
+	<value>boolean</value>
+	<value>double</value>
+	<value>integer</value>
+	<value>string</value>
+      </choice>
+      </attribute>
+      <optional>
+	<attribute name="unit">
+	  <data type="string"/>
+	</attribute>
+      </optional>
+      <optional>
+	<attribute name="default">
+	  <data type="string"/>
+	</attribute>
+      </optional>
+      <optional>
+	<attribute name="visible">
+	  <data type="boolean"/>
+	</attribute>
+      </optional>
+      <element name="description">
+	<a:documentation>
+	  This is the help test of the property
+	</a:documentation>
+	<ref name="localisation"/>
+      </element>
+    </element>
+  </define>
+</grammar>

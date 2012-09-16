@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Clip Module -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<!-- datatypes -->
+
+<define name="SVG.ClipPathValue.datatype">
+  <text/>
+</define>
+
+<!-- set of elements -->
+
+<define name="SVG.Clip.extra.class">
+  <empty/>
+</define>
+
+<define name="SVG.Clip.class">
+  <choice>
+   <ref name="SVG.clipPath"/>
+   <ref name="SVG.Clip.extra.class"/>
+  </choice>
+</define>
+
+<!-- attributes -->
+
+<define name="SVG.Clip.extra.attrib">
+  <empty/>
+</define>
+
+<define name="SVG.Clip.attrib" combine="interleave">
+   <optional>
+    <attribute name="clip-path">
+     <ref name="SVG.ClipPathValue.datatype"/>
+    </attribute>
+   </optional>
+   <optional>
+    <attribute name="clip-rule">
+     <ref name="SVG.ClipFillRule.datatype"/>
+    </attribute>
+   </optional>
+   <ref name="SVG.Clip.extra.attrib"/>
+</define>
+
+<!-- clipPath element -->
+
+<define name="SVG.clipPath">
+  <element name="clipPath">
+    <zeroOrMore>
+      <ref name="SVG.Description.class"/>
+    </zeroOrMore>
+    <zeroOrMore>
+     <choice>
+      <ref name="SVG.Animation.class"/>
+      <ref name="SVG.Use.class"/>
+      <ref name="SVG.Shape.class"/>
+      <ref name="SVG.Text.class"/>
+     </choice>
+    </zeroOrMore>
+    <ref name="SVG.Core.attrib"/>
+    <ref name="SVG.Conditional.attrib"/>
+    <ref name="SVG.Style.attrib"/>
+    <ref name="SVG.Text.attrib"/>
+    <ref name="SVG.TextContent.attrib"/>
+    <ref name="SVG.Font.attrib"/>
+    <ref name="SVG.Paint.attrib"/>
+    <ref name="SVG.Color.attrib"/>
+    <ref name="SVG.Opacity.attrib"/>
+    <ref name="SVG.Graphics.attrib"/>
+    <ref name="SVG.Clip.attrib"/>
+    <ref name="SVG.Mask.attrib"/>
+    <ref name="SVG.Filter.attrib"/>
+    <ref name="SVG.Cursor.attrib"/>
+    <ref name="SVG.External.attrib"/>
+    <optional>
+      <attribute name="transform">
+        <ref name="SVG.TransformList.datatype"/>
+      </attribute>
+    </optional>
+    <optional>
+      <attribute name="clipPathUnits">
+        <choice>
+          <value>userSpaceOnUse</value>
+          <value>objectBoundingBox</value>
+        </choice>
+      </attribute>
+    </optional>
+  </element>
+</define>
+
+
+</grammar>

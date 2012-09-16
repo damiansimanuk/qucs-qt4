@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Style Module  -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<!-- datatypes -->
+
+<define name="SVG.ClassList.datatype">
+ <text/> <!-- list of classes -->
+</define>
+
+<define name="SVG.MediaDesc.datatype">
+ <text/> <!-- comma-separated list of media descriptors. -->
+</define>
+
+<define name="SVG.StyleSheet.datatype">
+ <text/> <!-- style sheet data -->
+</define>
+
+<!-- classes -->
+
+<define name="SVG.Style.extra.class">
+ <empty/>
+</define>
+
+<define name="SVG.Style.class">
+ <choice>
+  <ref name="SVG.style"/>
+  <ref name="SVG.Style.extra.class"/>
+ </choice>
+</define>
+
+<!-- attributes -->
+
+<define name="SVG.Style.extra.attrib">
+ <empty/>
+</define>
+
+<define name="SVG.Style.attrib" combine="interleave">
+ <optional>
+  <attribute name="style">
+   <ref name="SVG.StyleSheet.datatype"/>
+  </attribute>
+ </optional>
+ <optional>
+  <attribute name="class">
+   <ref name="SVG.ClassList.datatype"/>
+  </attribute>
+ </optional>
+ <ref name="SVG.Style.extra.attrib"/>
+</define>
+
+<!-- elements -->
+
+<define name="SVG.style">
+ <element name="style">
+  <text/>
+  <ref name="SVG.Core.attrib"/>
+  <attribute name="type">
+   <ref name="SVG.ContentType.datatype"/>
+  </attribute>
+  <optional>
+   <attribute name="media">
+    <ref name="SVG.MediaDesc.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="title">
+    <ref name="SVG.Text.datatype"/>
+   </attribute>
+  </optional>
+ </element>
+</define>
+
+</grammar>

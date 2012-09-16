@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Gyrator" version="0.1.0" label="Gy">
+   <displaytext>
+      <lang lang="C">Gyrator</lang>
+      <lang lang="ca">Girador</lang>
+      <lang lang="cs">Gyrátor</lang>
+      <lang lang="de">Gyrator</lang>
+      <lang lang="es">Girador</lang>
+      <lang lang="fr">Gyrateur</lang>
+      <lang lang="he">גירטור</lang>
+      <lang lang="hu">Girátor</lang>
+      <lang lang="it">Giratore</lang>
+      <lang lang="jp">ジャイレータ</lang>
+      <lang lang="pl">Żyrator</lang>
+      <lang lang="ro">Girator</lang>
+      <lang lang="ru">Гиратор</lang>
+      <lang lang="sv">Gyrator</lang>
+      <lang lang="tr">Jiratör</lang>
+      <lang lang="uk">Гіратор</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">The gyrator is an electric circuit which inverts an impedance.</lang>
+      <lang lang="fr">Le gyrateur est un composant qui inverse les impédances</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/gyrator-isolike.svg">
+       <port name="+in" x="-20" y="-10"/>
+       <port name="-in" x="-20" y="10"/>
+       <port name="+out" x="20" y="-10"/>
+       <port name="-out" x="20" y="10"/>
+     </schematic>
+     <schematic name="ISOlike-variant" href="svg/gyrator-isolike-variant.svg">
+       <port name="+in" x="-30" y="-10"/>
+       <port name="-in" x="-30" y="10"/>
+       <port name="+out" x="30" y="-10"/>
+       <port name="-out" x="30" y="10"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/gyrator-qucs0.svg">
+       <port name="+in" x="-30" y="-30"/>
+       <port name="-in" x="-30" y="30"/>
+       <port name="+out" x="30" y="-30"/>
+       <port name="-out" x="30" y="30"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="+in" type="analog"/>
+      <port name="-in" type="analog"/>
+      <port name="+out" type="analog"/>
+      <port name="-out" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="R" type="double" unit="Ω" visible="true"
+		   default="50">
+	   <description>
+	     <lang lang="C">Gyration </lang>
+	     <lang lang="ca">Porcentaje de girador</lang>
+	     <lang lang="cs">Gyrátorový poměr</lang>
+	     <lang lang="de">Gyratorverhältnis</lang>
+	     <lang lang="es">porcentaje de girador</lang>
+	     <lang lang="fr">Rapport de gyration</lang>
+	     <lang lang="he">יחס גירטור</lang>
+	     <lang lang="it">valore giratore</lang>
+	     <lang lang="jp">ジャイレータ比率</lang>
+	     <lang lang="pl">Przekładnia żyratora</lang>
+	     <lang lang="ro">Ratia giratorului</lang>
+	     <lang lang="ru">Коэффициент гирации</lang>
+	     <lang lang="sv">Gyratorförhållande</lang>
+	     <lang lang="tr">Jiratör oranı</lang>
+	     <lang lang="uk">Коефіцієнт гірації</lang>
+	   </description>
+	 </property>
+	 <property name="Zref" type="double" unit="Ω" visible="false" 
+		   default="50">
+	   <description>
+	     <lang lang="C">Reference impedance</lang>
+	     <lang lang="cs">Referenční impedance</lang>
+	     <lang lang="de">Referenzimpedanz</lang>
+	     <lang lang="es">Impedancia de referencia</lang>
+	     <lang lang="fr">Impédance de référence</lang>
+	     <lang lang="he">עכבת יחוס</lang>
+	     <lang lang="hu">Névleges impedancia</lang>
+	     <lang lang="it">Impedenza di riferimento</lang>
+	     <lang lang="jp">インピーダンス</lang>
+	     <lang lang="pl">Impedancja odniesienia</lang>
+	     <lang lang="ro">Impedanţa de referinţă</lang>
+	     <lang lang="ru">Опорное полное сопротивление</lang>
+	     <lang lang="sv">Referensimpedans</lang>
+	     <lang lang="tr">Referans sanal direnci</lang>
+	     <lang lang="uk">опорний повний опір</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

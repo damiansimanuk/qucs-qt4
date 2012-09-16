@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Two coupled inductors" version="0.1.0" label="Lc">
+   <displaytext>
+      <lang lang="C">Two coupled inductors</lang>
+      <lang lang="ca">Dos bobinas acopladas</lang>
+      <lang lang="cs">Dvě svázané induktivity</lang>
+      <lang lang="de">Zwei gekoppelte Induktivitäten</lang>
+      <lang lang="es">Dos bobinas acopladas</lang>
+      <lang lang="fr">Deux bobines couplées</lang>
+      <lang lang="hu">Két csatolt tekercs</lang>
+      <lang lang="it">Due induttori accoppiati</lang>
+      <lang lang="pl">Dwie indukcyjności wzajemnie sprzężone</lang>
+      <lang lang="ru">Две индуктивно связанных катушки</lang>
+      <lang lang="sv">Två ömsesidiga induktanser</lang>
+      <lang lang="tr">Karşılıklı iki sargı</lang>
+      <lang lang="uk">Дві індуктивно пов&apos;язаних котушки</lang>
+   </displaytext>
+   
+   <description>
+      <lang lang="C">
+	A device that transfers electrical energy from one circuit to another 
+	through inductively coupling between two coils.
+      </lang>
+      <lang lang="fr">
+	Un composant qui transfere de l'énergie électrique d'un circuit vers un autre 
+	par couplage magnétique par un couplage entre deux bobines.
+      </lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/mutualinductor-isolike.svg">
+       <port name="1+" x="-30" y="-20"/>
+       <port name="2+" x="30" y="-20"/>
+       <port name="2-" x="30" y="20"/>
+       <port name="1-" x="-30" y="20"/>
+     </schematic>
+     <schematic name="ISOlike with text" href="svg/mutualinductor-isolike-withtext.svg">
+       <port name="1+" x="-30" y="-20"/>
+       <port name="2+" x="30" y="-20"/>
+       <port name="2-" x="30" y="20"/>
+       <port name="1-" x="-30" y="20"/>
+     </schematic>
+     <schematic name="ISOlike with arrow" href="svg/mutualinductor-isolike-witharrow.svg">
+       <port name="1+" x="-30" y="-20"/>
+       <port name="2+" x="30" y="-20"/>
+       <port name="2-" x="30" y="20"/>
+       <port name="1-" x="-30" y="20"/>
+     </schematic>
+     <schematic name="ISOlike with arrow and text" 
+		href="svg/mutualinductor-isolike-withtext-witharrow.svg">
+       <port name="1+" x="-30" y="-20"/>
+       <port name="2+" x="30" y="-20"/>
+       <port name="2-" x="30" y="20"/>
+       <port name="1-" x="-30" y="20"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/mutualinductor-qucs0.svg">
+       <port name="1+" x="-30" y="-30"/>
+       <port name="2+" x="30" y="-30"/>
+       <port name="2-" x="30" y="30"/>
+       <port name="1-" x="-30" y="30"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="1+" type="analog"/>
+      <port name="2+" type="analog"/>
+      <port name="2-" type="analog"/>
+      <port name="1-" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="L1" type="double" unit="L" visible="true"
+		   default="1e-3">
+	   <description>
+	     <lang lang="C">Inductance of coil #1</lang>
+	     <lang lang="ca">Inductancia de la bobina 1</lang>
+	     <lang lang="cs">Induktivita cívky 1</lang>
+	     <lang lang="de">Induktivität der Spule 1</lang>
+	     <lang lang="es">Inductancia de la bobina 1</lang>
+	     <lang lang="fr">Inductance de la 1ère bobine</lang>
+	     <lang lang="hu">1. tekercs induktivitása</lang>
+	     <lang lang="jp">コイル1のインダクタンス</lang>
+	     <lang lang="pl">Indukcyjnośc cewki 1</lang>
+	     <lang lang="ru">Индуктивность обмотки 1</lang>
+	     <lang lang="sv">Induktans hos spole 1</lang>
+	     <lang lang="uk">Індуктивність обмотки 1</lang>
+	   </description>
+	 </property>
+
+	 <property name="L2" type="double" unit="L" visible="true"
+		   default="1e-3">
+	   <description>
+	     <lang lang="C">Inductance of coil #2</lang>
+	     <lang lang="ca">Inductancia de la bobina 2</lang>
+	     <lang lang="cs">Induktivita cívky 2</lang>
+	     <lang lang="cs">Induktivita 2. cívky</lang>
+	     <lang lang="de">Induktivität der Spule 2</lang>
+	     <lang lang="es">Inductancia de la bobina 2</lang>
+	     <lang lang="fr">Inductance de la 2ème bobine</lang>
+	     <lang lang="hu">2. tekercs induktivitása</lang>
+	     <lang lang="jp">コイル2のインダクタンス</lang>
+	     <lang lang="pl">Indukcyjnośc cewki 2</lang>
+	     <lang lang="ru">Индуктивность обмотки 2</lang>
+	     <lang lang="sv">Induktans hos spole 2</lang>
+	     <lang lang="uk">Індуктивність обмотки 2</lang>
+	   </description>
+	 </property>
+	 
+	 <property name="k" type="double" unit="(1)" visible="false"
+		   default="0.9">
+	   <description>
+	     <lang lang="C">Coupling factor between coil 1 and 2</lang>
+	     <lang lang="ca">Inductancia mutua entre la bobina 1 y 2</lang>
+	     <lang lang="cs">Faktor svázání mezi cívkou 1 a 2</lang>
+	     <lang lang="de">Koppelfaktor zwischen Spule 1 und 2</lang>
+	     <lang lang="es">Inductancia mutua entre la bobina 1 y 2</lang>
+	     <lang lang="fr">Couplage entre la 1ère et 2ème bobine</lang>
+	     <lang lang="hu">1-2 tekercs közötti csatolási tényező</lang>
+	     <lang lang="it">Coefficiente di accoppiamento tra gli induttori 1 e 2</lang>
+	     <lang lang="jp">コイル1とコイル2間の結合係数</lang>
+	     <lang lang="pl">Współczynnik sprzężenie między 1 i 2</lang>
+	     <lang lang="ru">Коэффициент связи между обмоткой 1 и 2</lang>
+	     <lang lang="sv">Kopplingsfaktor mellan spole 1 och 2</lang>
+	     <lang lang="tr">Sargı 1 ve 2 arasındaki çiftlenim çarpanı</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

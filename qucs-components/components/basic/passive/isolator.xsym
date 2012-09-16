@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2008 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Isolator" version="0.1.0" label="Iso">
+   <displaytext>
+      <lang lang="C">Ideal isolator</lang>
+      <lang lang="de">Isolator</lang>
+      <lang lang="es">Aislante</lang>
+      <lang lang="fr">Isolateur idéal</lang>
+      <lang lang="he">מבודד</lang>
+      <lang lang="hu">Izolátor</lang>
+      <lang lang="it">Isolatore</lang>
+      <lang lang="jp">アイソレータ</lang>
+      <lang lang="pl">Izolator</lang>
+      <lang lang="pt">Isolador</lang>
+      <lang lang="ro">Izolator</lang>
+      <lang lang="ru">Изолятор</lang>
+      <lang lang="sv">Isolator</lang>
+      <lang lang="tr">Yalıtkan</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">A one way device where power flow in only one direction.</lang>
+      <lang lang="fr">Un composant à sens unique dans lequel la puissance va uniquement dans un sens.</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/isolator-isolike.svg">
+       <port name="in" x="-30" y="0"/>
+       <port name="out" x="30" y="0"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/isolator-qucs0.svg">
+       <port name="in" x="-30" y="0"/>
+       <port name="out" x="30" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="in" type="analog"/>
+      <port name="out" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="Zin" type="double" unit="Ω" visible="false" 
+		   default="50">
+	   <description>
+	     <lang lang="C">Reference impedance of input port</lang>
+	     <lang lang="ca">Impedancia de referencia del conector de entrada</lang>
+	     <lang lang="cs">Referenční impedance vstupního portu</lang>
+	     <lang lang="de">Referenzimpedanz des Eingangstors</lang>
+	     <lang lang="es">Impedancia de referencia del conector de entrada</lang>
+	     <lang lang="fr">Impédance de référence du port d'entrée</lang>
+	     <lang lang="he">עכבת יחוס של ממשק הקלט</lang>
+	     <lang lang="hu">Névleges impedancia a bemeneten</lang>
+	     <lang lang="it">Impedenza di riferimento della porta di input</lang>
+	     <lang lang="jp">入力ポートインピーダンス</lang>
+	     <lang lang="pl">Impedancja odniesienia portu wejściowego</lang>
+	     <lang lang="pt">Impedância de referência da porta de entrada</lang>
+	     <lang lang="ro">Impedanţa de referinţă la portul de intrare</lang>
+	     <lang lang="ru">Опорное полное сопротивление входного порта</lang>
+	     <lang lang="sv">Referensimpedans för inport</lang>
+	     <lang lang="tr">Giriş ucu referans empedansı</lang>
+	     <lang lang="uk">Опорний повний опір вхідного виводу</lang>
+	   </description>
+	 </property>
+	 <property name="Zout" type="double" unit="Ω" visible="false" 
+		   default="50">
+	   <description>
+	     <lang lang="C">Reference impedance of output port</lang>
+	     <lang lang="ca">Impedancia de referencia del conector de salida</lang>
+	     <lang lang="cs">Referenční impedance výstupního portu</lang>
+	     <lang lang="de">Referenzimpedanz des Ausgangstors</lang>
+	     <lang lang="es">Impedancia de referencia del conector de salida</lang>
+	     <lang lang="fr">Impédance de référence du port de sortie</lang>
+	     <lang lang="he">עכבת יחוס של ממשק הפלט</lang>
+	     <lang lang="hu">Névleges impedancia a kimeneten</lang>
+	     <lang lang="it">Impedenza di riferimento della porta di output</lang>
+	     <lang lang="jp">出力ポートインピーダンス</lang>
+	     <lang lang="pl">Impedancja odniesienia portu wyjściowego</lang>
+	     <lang lang="pt">Impedância de referência da porta de saída</lang>
+	     <lang lang="ro">Impedanţa de referinţă la portul de iesire</lang>
+	     <lang lang="ru">Опорное полное сопротивление выходного порта</lang>
+	     <lang lang="sv">Referensimpedans för utport</lang>
+	     <lang lang="tr">Çıkış ucu referans empedansı</lang>
+	     <lang lang="uk">Опорний повний опір вивідного виводу</lang>
+	   </description>
+	 </property>
+	 <property name="Temp" type="double" unit="°C" visible="false" 
+		   default="26.5">
+	   <description>
+	     <lang lang="C">Temperature</lang>
+	     <lang lang="fr">Température</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

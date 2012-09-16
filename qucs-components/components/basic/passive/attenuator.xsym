@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2008 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Attenuator" version="0.1.0" label="Att">
+   <displaytext>
+      <lang lang="C">Attenuator</lang>
+      <lang lang="de">Dämpfungsglied</lang>
+      <lang lang="es">Atenuador</lang>
+      <lang lang="fr">Atténuateur</lang>
+      <lang lang="he">מנחת</lang>
+      <lang lang="hu">Csillapító</lang>
+      <lang lang="it">Attenuatore</lang>
+      <lang lang="jp">アッテネータ</lang>
+      <lang lang="pl">Tłumik</lang>
+      <lang lang="pt">Atenuador</lang>
+      <lang lang="ro">atenuator</lang>
+      <lang lang="ru">Ослабляющий член</lang>
+      <lang lang="sv">Dämpsats</lang>
+      <lang lang="tr">Zayıflatıcı</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">A dissipative device.</lang>
+      <lang lang="fr">Un composent dissipatif.</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/attenuator-isolike-1.svg">
+       <port name="1" x="-30" y="0"/>
+       <port name="2" x="30" y="0"/>
+     </schematic>
+     <schematic name="ISOlike variant 2" href="svg/attenuator-isolike-2.svg">
+       <port name="1" x="-30" y="0"/>
+       <port name="2" x="30" y="0"/>
+     </schematic>
+     <schematic name="ISOlike variant 3" href="svg/attenuator-isolike-3.svg">
+       <port name="1" x="-30" y="0"/>
+       <port name="2" x="30" y="0"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/attenuator-qucs0.svg">
+       <port name="1" x="-30" y="0"/>
+       <port name="2" x="30" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="1" type="analog"/>
+      <port name="2" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="L" type="double" unit="dB" visible="true"
+		   default="50">
+	   <description>
+	     <lang lang="C">Power attenuation</lang>
+	     <lang lang="de">Leistungsdämpfung</lang>
+	     <lang lang="es">Atenuación de potencia</lang>
+	     <lang lang="fr">Atténuation de puissance</lang>
+	     <lang lang="he">הנחתת הספק</lang>
+	     <lang lang="hu">Csillapítás</lang>
+	     <lang lang="it">Attenuazione di potenza</lang>
+	     <lang lang="jp">パワーアッテネーション</lang>
+	     <lang lang="pl">Tłumienie mocy</lang>
+	     <lang lang="pt">Atenuação de potência</lang>
+	     <lang lang="ro">Atenuare de putere</lang>
+	     <lang lang="ru">ослабление мощности</lang>
+	     <lang lang="sv">Effektdämpning</lang>
+	     <lang lang="tr">güç zayıflaması</lang>
+	   </description>
+	 </property>
+	 <property name="Temp" type="double" unit="°C" visible="false" 
+		   default="26.5">
+	   <description>
+	     <lang lang="C">Temperature</lang>
+	     <lang lang="de">Temperatur</lang>
+	     <lang lang="es">Temperatura</lang>
+	     <lang lang="fr">température en degrés</lang>
+	     <lang lang="hu">Hőmérséklet"</lang>
+	     <lang lang="it">Temperatura"</lang>
+	     <lang lang="jp">温度"</lang>
+	     <lang lang="ru">Температура в"</lang>
+	     <lang lang="sv">Temperature</lang>
+	   </description>
+	 </property>
+	 <property name="Zref" type="double" unit="Ω" visible="false" 
+		   default="50.0">
+	   <description>
+	     <lang lang="C">Reference impedance</lang>
+	     <lang lang="de">Referenzimpedanz</lang>
+	     <lang lang="es">Impedancia de referencia</lang>
+	     <lang lang="fr">Impédance de référence</lang>
+	     <lang lang="he">עכבת יחוס</lang>
+	     <lang lang="hu">Névleges impedancia</lang>
+	     <lang lang="it">Impedenza di riferimento</lang>
+	     <lang lang="jp">インピーダンス</lang>
+	     <lang lang="pl">Impedancja odniesienia</lang>
+	     <lang lang="ro">Impedanţa de referinţă</lang>
+	     <lang lang="ru">Опорное полное сопротивление</lang>
+	     <lang lang="sv">Referensimpedans</lang>
+	     <lang lang="tr">Referans sanal direnci</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

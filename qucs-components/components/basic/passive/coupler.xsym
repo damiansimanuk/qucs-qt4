@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2008 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Coupler" version="0.1.0" label="Co">
+   <displaytext>
+     <lang lang="C">Ideal coupler</lang>
+     <lang lang="ca">Acoplador ideal</lang>
+     <lang lang="cs">Ideální vazební člen</lang>
+     <lang lang="de">Idealer koppler</lang>
+     <lang lang="es">Acoplador ideal</lang>
+     <lang lang="fr">Coupleur idéal</lang>
+     <lang lang="it">Accoppiatore ideale</lang>
+     <lang lang="jp">理想カップラ</lang>
+     <lang lang="pl">Sprzęgacz idealny</lang>
+     <lang lang="ru">Идеальное устройство связи</lang>
+     <lang lang="tr">Fikirsel çiftleyici (kuplör)</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">A device that couple some power from input to ouput</lang>
+      <lang lang="fr">Un composant qui couple la puissance d'entrée en sortie </lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/coupler-isolike.svg">
+       <port name="+in" x="-50" y="-20"/>
+       <port name="+out" x="50" y="-20"/>
+       <port name="-out" x="50" y="20"/>
+       <port name="-in" x="-50" y="20"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/coupler-qucs0.svg">
+       <port name="+in" x="-30" y="-20"/>
+       <port name="+out" x="30" y="-20"/>
+       <port name="-out" x="30" y="20"/>
+       <port name="-in" x="-30" y="20"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="+in" type="analog"/>
+      <port name="+out" type="analog"/>
+      <port name="-out" type="analog"/>
+      <port name="-in" type="analog"/>
+   </ports>
+
+   <properties>
+     <!-- TODO Check that gain unit is always 1 for all component 
+          TODO Replace 0.7071 by sqrt(2) 
+     -->
+     <property name="k" type="double" unit="1" visible="true" 
+	       default="0.7071">
+       <description>
+	 <lang lang="C">Coupling factor</lang>
+	 <lang lang="ca">Factor de acoplamiento</lang>
+	 <lang lang="cs">Vazební faktor</lang>
+	 <lang lang="de">Koppelfaktor</lang>
+	 <lang lang="es">Factor de acoplamiento</lang>
+	 <lang lang="fr">Coefficient de couplage</lang>
+	 <lang lang="it">Fattore di accoppiamento</lang>
+	 <lang lang="jp">カップリング係数</lang>
+	 <lang lang="pl">współczynnik sprzeżenia</lang>
+	 <lang lang="ru">Коэффициент связи</lang>
+	 <lang lang="tr">Çiftlenim faktörü</lang>
+       </description>
+     </property>
+
+     <property name="phi" type="double" unit="rad" visible="true" 
+	       default="3.14159">
+       <description>
+	 <lang lang="C">Phase shift</lang>
+	 <lang lang="fr">Déphasage</lang>
+       </description>
+     </property>
+
+     <property name="Zref" type="double" unit="Ω" visible="false" 
+	       default="50">
+       <description>
+	 <lang lang="C">Reference impedance</lang>
+	 <lang lang="de">Referenzimpedanz</lang>
+	 <lang lang="es">Impedancia de referencia</lang>
+	 <lang lang="fr">Impédance de référence</lang>
+	 <lang lang="he">עכבת יחוס</lang>
+	 <lang lang="hu">Névleges impedancia</lang>
+	 <lang lang="it">Impedenza di riferimento</lang>
+	 <lang lang="jp">インピーダンス</lang>
+	 <lang lang="pl">Impedancja odniesienia</lang>
+	 <lang lang="ro">Impedanţa de referinţă</lang>
+	 <lang lang="ru">Опорное полное сопротивление</lang>
+	 <lang lang="sv">Referensimpedans</lang>
+	 <lang lang="tr">Referans sanal direnci</lang>
+       </description>
+     </property>
+   </properties>
+</component>

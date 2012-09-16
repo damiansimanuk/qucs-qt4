@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Graphical Element Events Attribute Module -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<define name="SVG.display.attrib">
+ <optional>
+  <attribute name="display">
+   <choice>
+    <value>inline</value>
+    <value>block</value>
+    <value>list-item</value>
+    <value>run-in</value>
+    <value>compact</value>
+    <value>marker</value>
+    <value>table</value>
+    <value>inline-table</value>
+    <value>table-row-group</value>
+    <value>table-header-group</value>
+    <value>table-footer-group</value>
+    <value>table-row</value>
+    <value>table-column-group</value>
+    <value>table-column</value>
+    <value>table-cell</value>
+    <value>table-caption</value>
+    <value>none</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.image-rendering.attrib">
+ <optional>
+  <attribute name="image-rendering">
+   <choice>
+    <value>auto</value>
+    <value>optimizeSpeed</value>
+    <value>optimizeQuality</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.pointer-events.attrib">
+ <optional>
+  <attribute name="pointer-events">
+   <choice>
+    <value>visiblePainted</value>
+    <value>visibleFill</value>
+    <value>visibleStroke</value>
+    <value>visible</value>
+    <value>painted</value>
+    <value>fill</value>
+    <value>stroke</value>
+    <value>all</value>
+    <value>none</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.shape-rendering.attrib">
+ <optional>
+  <attribute name="shape-rendering">
+   <choice>
+    <value>auto</value>
+    <value>optimizeSpeed</value>
+    <value>crispEdges</value>
+    <value>geometricPrecision</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.text-rendering.attrib">
+ <optional>
+  <attribute name="text-rendering">
+   <choice>
+    <value>auto</value>
+    <value>optimizeSpeed</value>
+    <value>optimizeLegibility</value>
+    <value>geometricPrecision</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.visibility.attrib">
+ <optional>
+  <attribute name="visibility">
+   <choice>
+    <value>visible</value>
+    <value>hidden</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.Graphics.extra.attrib">
+ <empty/>
+</define>
+
+<define name="SVG.Graphics.attrib" combine="interleave">
+ <ref name="SVG.display.attrib"/>
+ <ref name="SVG.image-rendering.attrib"/>
+ <ref name="SVG.pointer-events.attrib"/>
+ <ref name="SVG.shape-rendering.attrib"/>
+ <ref name="SVG.text-rendering.attrib"/>
+ <ref name="SVG.visibility.attrib"/>
+ <ref name="SVG.Graphics.extra.attrib"/>
+</define>
+
+</grammar>

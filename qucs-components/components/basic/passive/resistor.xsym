@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Resistor" version="0.1.0" label="R">
+   <displaytext>
+      <lang lang="C">Resistor</lang>
+      <lang lang="ca">Resistencia</lang>
+      <lang lang="cs">Odpor</lang>
+      <lang lang="de">Widerstand</lang>
+      <lang lang="es">Resistencia</lang>
+      <lang lang="fr">Résistance</lang>
+      <lang lang="hu">Ellenállás</lang>
+      <lang lang="it">Resistore</lang>
+      <lang lang="jp">抵抗</lang>
+      <lang lang="ro">Rezistor</lang>
+      <lang lang="ru">Резистор</lang>
+      <lang lang="sv">Motstånd</lang>
+      <lang lang="tr">Direnç</lang>
+      <lang lang="uk">Резистор</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">A dissipative device. Ohm law apply</lang>
+      <lang lang="fr">Un composent dissipatif. La loi d'Ohm s'applique</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/resistor-isolike.svg">
+       <port name="1" x="-20" y="0"/>
+       <port name="2" x="20" y="0"/>
+     </schematic>
+     <schematic name="old" href="svg/resistor-old.svg">
+       <port name="1" x="-20" y="0"/>
+       <port name="2" x="20" y="0"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/resistor-qucs0.svg">
+       <port name="1" x="-30" y="0"/>
+       <port name="2" x="30" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="1" type="analog"/>
+      <port name="2" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="R" type="double" unit="Ω" visible="true"
+		   default="50">
+	   <description>
+	     <lang lang="C">Ohmic resistance</lang>
+	     <lang lang="cs">Ohmický odpor</lang>
+	     <lang lang="de">Ohmscher widerstand</lang>
+	     <lang lang="fr">Résistance ohmnique</lang>
+	     <lang lang="hu">Ohmikus ellenállás</lang>
+	     <lang lang="it">Resistenza ohmica</lang>
+	     <lang lang="ro">Rezistenţa ohmica</lang>
+	     <lang lang="ru">Омическое сопротивление</lang>
+	     <lang lang="sv">Omskt motstånd</lang>
+	     <lang lang="tr">Omik direnç</lang>
+	     <lang lang="uk">Омічний опір</lang>
+	   </description>
+	 </property>
+	 <property name="Temp" type="double" unit="°C" visible="false" 
+		   default="26.5">
+	   <description>
+	     <lang lang="C">Temperature</lang>
+	     <lang lang="fr">Température</lang>
+	   </description>
+	 </property>
+	 <property name="Tc1" type="double" unit="K⁻¹" visible="false" 
+		   default="0.0">
+	   <description>
+	     <lang lang="C">First order temperature coefficient</lang>
+	     <lang lang="fr">Coefficient de température au premier ordre</lang>
+	   </description>
+	 </property>
+	 <property name="Tc2" type="double" unit="K⁻²" visible="false" 
+		   default="0.0">
+	   <description>
+	     <lang lang="C">Second order temperature coefficient</lang>
+	     <lang lang="fr">Coefficient de température au second ordre</lang>
+	   </description>
+	 </property>
+	 <property name="Tnom" type="double" unit="°C" visible="false" 
+		   default="26.5">
+	   <description>
+	     <lang lang="C">Temperature at which parameters were extracted</lang>
+	     <lang lang="fr">Température à laquelle les paramètres ont été mesurés</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

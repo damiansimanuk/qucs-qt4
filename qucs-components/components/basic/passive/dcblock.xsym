@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="DC block" version="0.1.0" label="C">
+   <displaytext>
+     <lang lang="C">DC block</lang>
+     <lang lang="ca">Bloque DC</lang>
+     <lang lang="cs">DC blokace</lang>
+     <lang lang="de">DC-Sperre</lang>
+     <lang lang="es">bloque DC</lang>
+     <lang lang="fr">Découplage</lang>
+     <lang lang="he">בלוק זרם ישר</lang>
+     <lang lang="hu">DC blokkoló</lang>
+     <lang lang="it">Blocco DC</lang>
+     <lang lang="jp">DCブロック</lang>
+     <lang lang="pl">Zapora DC</lang>
+     <lang lang="ro">Bloc DC</lang>
+     <lang lang="ru">развязка</lang>
+     <lang lang="sv">DC-blockering</lang>
+     <lang lang="tr">DC kalıp</lang>
+     <lang lang="uk">розв язка</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">A component that allow AC to pass and block DC.</lang>
+      <lang lang="fr">Un composant laissant passer l'alternatif et bloquant 
+                      le continu.</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/dcblock-isolike.svg">
+       <port name="+" x="-20" y="0"/>
+       <port name="-" x="20" y="0"/>
+     </schematic>
+     <schematic name="old" href="svg/dcblock-old.svg">
+       <port name="+" x="-20" y="0"/>
+       <port name="-" x="20" y="0"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/dcblock-qucs0.svg">
+       <port name="+" x="-30" y="0"/>
+       <port name="-" x="30" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="+" type="analog"/>
+      <port name="-" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="C" type="double" unit="F" visible="false"
+		   default="1e-6">
+	   <description>
+	     <lang lang="C">Capacitance used for transient simulation</lang>
+	     <lang lang="ca">Capacidad para simulación transitoria</lang>
+	     <lang lang="cs">Kapazität pro přechodovou simulaci</lang>
+	     <lang lang="de">Kapazität für die Transientensimulation</lang>
+	     <lang lang="es">Capacidad para simulación transitoria</lang>
+	     <lang lang="fr">Capacité utilisé pour la simulation transitoire</lang>
+	     <lang lang="it">Capacità per simulazione transitorio</lang>
+	     <lang lang="pl">Pojemność dla symulacji czasowej</lang>
+	     <lang lang="ru">емкость для моделирования переходных процессов</lang>
+	     <lang lang="sv">Kapacitans för transientsimulering</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

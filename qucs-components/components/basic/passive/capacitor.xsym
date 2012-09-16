@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Capacitor" version="0.1.0" label="C">
+   <displaytext>
+      <lang lang="C">Capacitor</lang>
+      <lang lang="de">Kondensator</lang>
+      <lang lang="es">Condensador</lang>
+      <lang lang="fr">Condensateur</lang>
+      <lang lang="he">קבל</lang>
+      <lang lang="hu">Kondenzátor</lang>
+      <lang lang="it">Condensatore</lang>
+      <lang lang="jp">コンデンサ</lang>
+      <lang lang="pl">Kondensator</lang>
+      <lang lang="ro">Capacitate</lang>
+      <lang lang="ru">Конденсатор</lang>
+      <lang lang="sv">Kondensator</lang>
+      <lang lang="tr">sığa</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">A electrical energy storage device</lang>
+      <lang lang="fr">Un composant de stockage de l'énergie électrique</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/capacitor-isolike.svg">
+       <port name="+" x="-20" y="0"/>
+       <port name="-" x="20" y="0"/>
+     </schematic>
+     <schematic name="old" href="svg/capacitor-old.svg">
+       <port name="+" x="-20" y="0"/>
+       <port name="-" x="20" y="0"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/capacitor-qucs0.svg">
+       <port name="+" x="-30" y="0"/>
+       <port name="-" x="30" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="+" type="analog"/>
+      <port name="-" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="C" type="double" unit="F" visible="true"
+		   default="1e-12">
+	   <description>
+	     <lang lang="C">Capacitance</lang>
+	     <lang lang="de">Kapazität</lang>
+	     <lang lang="fr">Capacité</lang>
+	     <lang lang="es">Capacidad</lang>
+	     <lang lang="hu">Kapacitás</lang>
+	     <lang lang="it">Capacità</lang>
+	     <lang lang="jp">容量</lang>
+	     <lang lang="pl">Pojemność</lang>
+	     <lang lang="pt">Capacitância</lang>
+	     <lang lang="ro">Capacitate</lang>
+	     <lang lang="sv">Kapacitans</lang>
+	   </description>
+	 </property>
+	 <property name="V" type="double" unit="V" visible="false" 
+		   default="0">
+	   <description>
+	     <lang lang="C">Initial voltage (t=0)</lang>
+	     <lang lang="fr">Tension initiale (t=0)</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

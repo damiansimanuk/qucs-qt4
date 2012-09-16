@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.2" baseProfile="tiny"
+     viewBox="-30 -55 60 110">
+   <defs>
+      <style type="text/css"><![CDATA[
+                                      g {
+                                      stroke: black;
+                                      fill: none;
+                                      stroke-width: 1;
+                                      }
+                                      ]]>
+      </style>
+   </defs>
+   <desc>Transformer ISO norm like (06-09-05)</desc>
+   <!-- do not work with qt 
+   <defs>
+     <symbol id="inductor" viewBox="-30 -10 60 10">
+       <desc>Inductor</desc>
+       <path d="M -20 0 
+		a 5 5 0 0 1 10 0
+		a 5 5 0 0 1 10 0
+		a 5 5 0 0 1 10 0
+		a 5 5 0 0 1 10 0"
+	     />	
+     </symbol>
+   </defs>
+   -->
+   <g id="transformer" transform="rotate(90)">
+     <g class="outline">
+       <g transform="translate(30,10)" class="outline">
+       <!-- first inductor -->
+       <path d="M -20 0 
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0"
+	   />	
+       </g>
+       <!-- <use x="-30" y="0" width="60" height="10" xlink:href="#inductor" /> -->
+       <g transform="translate(-30,10)" class="outline">
+       <!-- first inductor -->
+       <path d="M -20 0 
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0"
+	   />	
+       <!-- <use x="-30" y="0" width="60" height="10" xlink:href="#inductor" /> -->
+
+       </g>
+       <g transform="scale(-1)" class="outline">
+	 <g transform="translate(0,10)" class="outline">
+	 <path d="M -20 0 
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0
+	      a 5 5 0 0 1 10 0"
+	   />	
+	 </g>
+	 <!--<use x="-30" y="0" width="60" height="10" xlink:href="#inductor" />-->
+       </g>
+       <!-- access -->
+       <line x1="-20" y1="-30" x2="-20" y2="-10"/>
+       <line x1="20" y1="-30" x2="20" y2="-10"/>
+       <line x1="-10" y1="30" x2="-10" y2="10"/>
+       <line x1="-50" y1="30" x2="-50" y2="10"/>
+       <line x1="10" y1="30" x2="10" y2="10"/>
+       <line x1="50" y1="30" x2="50" y2="10"/>
+     </g>
+     <g class="mdot">
+       <!-- dot -->
+       <circle cx="-40" cy="20" r="1"/>
+       <circle cx="20" cy="20" r="1"/>
+       <circle cx="-30" cy="-20" r="1"/>
+     </g>
+   </g>
+</svg>

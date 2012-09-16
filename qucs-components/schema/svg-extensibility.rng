@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Extensibility Module -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<define name="SVG.Extensibility.extra.class">
+ <empty/>
+</define>
+
+<define name="SVG.Extensibility.class">
+ <choice>
+  <ref name="SVG.foreignObject"/>
+  <ref name="SVG.Extensibility.extra.class"/>
+ </choice>
+</define>
+
+<define name="SVG.foreignObject">
+ <element name="foreignObject">
+  <ref name="SVG.foreignObject.content"/>
+
+  <ref name="SVG.Core.attrib"/>
+  <ref name="SVG.Conditional.attrib"/>
+  <ref name="SVG.Style.attrib"/>
+  <ref name="SVG.Presentation.attrib"/>
+  <ref name="SVG.GraphicalEvents.attrib"/>
+  <ref name="SVG.External.attrib"/>
+  <optional>
+   <attribute name="x">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <optional>
+   <attribute name="y">
+    <ref name="SVG.Coordinate.datatype"/>
+   </attribute>
+  </optional>
+  <attribute name="width">
+   <ref name="SVG.Length.datatype"/>
+  </attribute>
+  <attribute name="height">
+   <ref name="SVG.Length.datatype"/>
+  </attribute>
+  <optional>
+   <attribute name="transform">
+    <ref name="SVG.TransformList.datatype"/>
+   </attribute>
+  </optional>
+ </element>
+</define>
+
+<define name="SVG.foreignObject.content">
+ <zeroOrMore>
+  <ref name="SVG.foreignObject.class"/>
+ </zeroOrMore>
+</define>
+
+<define name="SVG.foreignObject.class" combine="choice">
+ <choice>
+  <text/>
+ </choice>
+</define>
+
+</grammar>

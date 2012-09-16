@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Three windings transformer" version="0.1.0" label="Tr">
+   <displaytext>
+      <lang lang="C">Three windings transformer</lang>
+      <lang lang="fr">Transformateur à trois enroulements</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">
+	A device that transfers electrical energy from one circuit to another 
+	through inductively coupling. This version of transformer has three coupled
+	winding.
+      </lang>
+      <lang lang="fr">
+	Un composant qui transfere de l'énergie électrique d'un circuit vers un autre 
+	par couplage magnétique. Cette version du transformateur à trois enroulements 
+	couplés
+      </lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" 
+		href="svg/three-windings-transformer-isolike.svg">
+       <port name="1+" x="-30" y="-50"/>
+       <port name="2+" x="30" y="-20"/>
+       <port name="2-" x="30" y="20"/>
+       <port name="3-" x="-30" y="50"/>
+       <port name="3+" x="-30" y="10"/>
+       <port name="1-" x="-30" y="-10"/>
+     </schematic>
+     <schematic name="ISOlike with text" 
+		href="svg/three-windings-transformer-isolike-withtext.svg">
+       <port name="1+" x="-30" y="-50"/>
+       <port name="2+" x="30" y="-20"/>
+       <port name="2-" x="30" y="20"/>
+       <port name="3-" x="-30" y="50"/>
+       <port name="3+" x="-30" y="10"/>
+       <port name="1-" x="-30" y="-10"/>
+     </schematic>
+     <schematic name="qucs0" 
+		href="svg/three-windings-transformer-qucs0.svg">
+       <port name="1+" x="-30" y="-70"/>
+       <port name="2+" x="30" y="-30"/>
+       <port name="2-" x="30" y="30"/>
+       <port name="3-" x="-30" y="70"/>
+       <port name="3+" x="-30" y="10"/>
+       <port name="1-" x="-30" y="-10"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="1+" type="analog"/>
+      <port name="2+" type="analog"/>
+      <port name="2-" type="analog"/>
+      <port name="3-" type="analog"/>
+      <port name="3+" type="analog"/>
+      <port name="1-" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="T1" type="double" unit="" visible="true"
+		   default="1">
+	   <description>
+	     <lang lang="C">Voltage transformation ratio of primary winding</lang>
+	     <lang lang="fr">Rapport de transformation du primaire</lang>
+	   </description>
+	 </property>
+	 <property name="T2" type="double" unit="" visible="true"
+		   default="1">
+	   <description>
+	     <lang lang="C">Voltage transformation ratio of secondary winding</lang>
+	     <lang lang="fr">Rapport de transformation du secondaire</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

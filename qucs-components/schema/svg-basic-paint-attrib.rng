@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Basic Paint Attribute Module -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<!-- datatypes -->
+
+<define name="SVG.Paint.datatype">
+ <text/> <!-- a 'fill' or 'stroke' property/attribute value: <paint> -->
+</define>
+
+<define name="SVG.StrokeDashArrayValue.datatype">
+ <text/> <!-- 'stroke-dasharray' property/attribute value (e.g., 'none', list of <number>s) -->
+</define>
+
+<define name="SVG.StrokeDashOffsetValue.datatype">
+ <text/> <!-- 'stroke-dashoffset' property/attribute value (e.g., 'none', <legnth>) -->
+</define>
+
+<define name="SVG.StrokeMiterLimitValue.datatype">
+ <text/> <!-- 'stroke-miterlimit' property/attribute value (e.g., <number>) -->
+</define>
+
+<define name="SVG.StrokeWidthValue.datatype">
+ <text/> <!-- 'stroke-width' property/attribute value (e.g., <length>) -->
+</define>
+
+<!-- attributes -->
+
+<define name="SVG.fill.attrib">
+ <optional>
+  <attribute name="fill">
+   <ref name="SVG.Paint.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.fill-rule.attrib">
+ <optional>
+  <attribute name="fill-rule">
+   <ref name="SVG.ClipFillRule.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.stroke.attrib">
+ <optional>
+  <attribute name="stroke">
+   <ref name="SVG.Paint.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.stroke-dasharray.attrib">
+ <optional>
+  <attribute name="stroke-dasharray">
+   <ref name="SVG.StrokeDashArrayValue.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.stroke-dashoffset.attrib">
+ <optional>
+  <attribute name="stroke-dashoffset">
+   <ref name="SVG.StrokeDashOffsetValue.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.stroke-linecap.attrib">
+ <optional>
+  <attribute name="stroke-linecap">
+   <choice>
+    <value>butt</value>
+    <value>round</value>
+    <value>square</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.stroke-linejoin.attrib">
+ <optional>
+  <attribute name="stroke-linejoin">
+   <choice>
+    <value>miter</value>
+    <value>round</value>
+    <value>bevel</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.stroke-miterlimit.attrib">
+ <optional>
+  <attribute name="stroke-miterlimit">
+   <ref name="SVG.StrokeMiterLimitValue.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.stroke-width.attrib">
+ <optional>
+  <attribute name="stroke-width">
+   <ref name="SVG.StrokeWidthValue.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.Paint.extra.attrib">
+ <empty/>
+</define>
+
+<define name="SVG.Paint.attrib" combine="interleave">
+ <ref name="SVG.fill.attrib"/>
+ <ref name="SVG.fill-rule.attrib"/>
+ <ref name="SVG.stroke.attrib"/>
+ <ref name="SVG.stroke-dasharray.attrib"/>
+ <ref name="SVG.stroke-dashoffset.attrib"/>
+ <ref name="SVG.stroke-linecap.attrib"/>
+ <ref name="SVG.stroke-linejoin.attrib"/>
+ <ref name="SVG.stroke-miterlimit.attrib"/>
+ <ref name="SVG.stroke-width.attrib"/>
+ <ref name="SVG.Paint.extra.attrib"/>
+</define>
+
+<define name="SVG.color.attrib">
+ <optional>
+  <attribute name="color">
+   <ref name="SVG.Color.datatype"/>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.color-rendering.attrib">
+ <optional>
+  <attribute name="color-rendering">
+   <choice>
+    <value>auto</value>
+    <value>optimizeSpeed</value>
+    <value>optimizeQuality</value>
+    <value>inherit</value>
+   </choice>
+  </attribute>
+ </optional>
+</define>
+
+<define name="SVG.Color.extra.attrib">
+ <empty/>
+</define>
+
+<define name="SVG.Color.attrib" combine="interleave">
+ <ref name="SVG.color.attrib"/>
+ <ref name="SVG.color-rendering.attrib"/>
+ <ref name="SVG.Color.extra.attrib"/>
+</define>
+
+</grammar>

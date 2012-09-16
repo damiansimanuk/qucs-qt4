@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<component name="Inductor" version="0.1.0" label="L">
+   <displaytext>
+      <lang lang="C">Inductor</lang>
+      <lang lang="ca">Bobina</lang>
+      <lang lang="cs">Cívka</lang>
+      <lang lang="de">Spule</lang>
+      <lang lang="es">Bobina</lang>
+      <lang lang="fr">Inductance</lang>
+      <lang lang="he">סליל</lang>
+      <lang lang="hu">Tekercs</lang>
+      <lang lang="it">Induttore</lang>
+      <lang lang="jp">インダクタ</lang>
+      <lang lang="pl">Cewka</lang>
+      <lang lang="pt">Indutor</lang>
+      <lang lang="ro">Inductor</lang>
+      <lang lang="ru">Катушка индуктивности</lang>
+      <lang lang="sv">Ledare</lang>
+      <lang lang="tr">Sargı</lang>
+      <lang lang="uk">Катушка індуктивності</lang>
+   </displaytext>
+
+   <description>
+      <lang lang="C">A magnetic energy storage device</lang>
+      <lang lang="fr">Un composant de stockage de l'énergie magnétique</lang>
+   </description>
+
+   <schematics default="ISOlike">
+     <schematic name="ISOlike" href="svg/inductor-isolike.svg">
+       <port name="+" x="-20" y="0"/>
+       <port name="-" x="20" y="0"/>
+     </schematic>
+     <schematic name="long" href="svg/inductor-long.svg">
+       <port name="+" x="-30" y="0"/>
+       <port name="-" x="30" y="0"/>
+     </schematic>
+     <schematic name="qucs0" href="svg/inductor-qucs0.svg">
+       <port name="+" x="-30" y="0"/>
+       <port name="-" x="30" y="0"/>
+     </schematic>
+   </schematics>
+
+   <ports>
+      <port name="+" type="analog"/>
+      <port name="-" type="analog"/>
+   </ports>
+
+   <properties>
+	 <property name="L" type="double" unit="H" visible="true"
+		   default="1e-9">
+	   <description>
+	     <lang lang="C">Inductance</lang>
+	     <lang lang="ca">Inductancia</lang>
+	     <lang lang="cs">Induktivita</lang>
+	     <lang lang="de">Induktivität</lang>
+	     <lang lang="fr">Inductance</lang>
+	     <lang lang="es">Inductancia</lang>
+	     <lang lang="hu">Induktivitás</lang>
+	     <lang lang="it">Induttanza</lang>
+	     <lang lang="jp">インダクタンス</lang>
+	     <lang lang="pl">Indukczjność</lang>
+	     <lang lang="ro">Inductanţa</lang>
+	     <lang lang="ru">Индуктивность</lang>
+	     <lang lang="sv">Induktans </lang>
+	     <lang lang="uk">Індуктивність</lang>
+	   </description>
+	 </property>
+	 <property name="I" type="double" unit="A" visible="false" 
+		   default="0">
+	   <description>
+	     <lang lang="C">Initial current (t=0)</lang>
+	     <lang lang="fr">Courant initial (t=0)</lang>
+	   </description>
+	 </property>
+   </properties>
+</component>

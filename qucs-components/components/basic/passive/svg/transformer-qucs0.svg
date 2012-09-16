@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     version="1.2" baseProfile="tiny"
+     viewBox="-30 -50 60 90">
+   <defs>
+      <style type="text/css"><![CDATA[
+                                      g {
+                                      stroke: black;
+                                      fill: none;
+                                      stroke-width: 1;
+                                      }
+                                      ]]>
+      </style>
+   </defs>
+   <desc>Transformer qucs old version</desc>
+   <!-- they are right angle therefore need to use path and not inline :-( -->
+   <g id="transformer" transform="rotate(90)">
+     <g class="outline">
+       <!-- inductor -->
+       <path d="M -30 -30 
+	      v 20	
+	      h 12
+	      a 6 6 0 0 0 12 0
+	      a 6 6 0 0 0 12 0
+	      a 6 6 0 0 0 12 0
+	      h 12
+	      v -20
+	      "
+	     />	
+       <path d="M -30 30 
+	      v -20	
+	      h 12
+	      a 6 6 0 0 1 12 0
+	      a 6 6 0 0 1 12 0
+	      a 6 6 0 0 1 12 0
+	      h 12
+	      v 20
+	      "
+	     />	
+     </g>
+     <g class="mdot">
+       <!-- dot -->
+       <circle cx="-40" cy="20" r="1"/>
+       <circle cx="-40" cy="-20" r="1"/>
+     </g>
+   </g>
+   <g id="text" class="text">
+     <!--
+     <text x="-20" y="0" 
+	   dominant-baseline="central" 
+	   fill="black"
+	   text-anchor="middle" font-size="5">
+       T
+     </text>
+     -->
+     <text x="-20" y="1" 
+	   fill="black" font-family="Time"
+	   text-anchor="middle" font-size="5">
+       T
+     </text>
+   </g>
+</svg>

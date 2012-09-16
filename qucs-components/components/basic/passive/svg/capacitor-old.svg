@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.2" baseProfile="tiny"
+     viewBox="-20 -15 40 30">
+   <defs>
+      <style type="text/css"><![CDATA[
+                                      g {
+                                      stroke: black;
+                                      fill: none;
+                                      stroke-width: 1;
+                                      }
+                                      ]]>
+      </style>
+   </defs>
+   <desc>capacitor ISO norm like (04-01-02)</desc>
+   <g id="capacitor" class="outline">
+     <line x1="-20" y1="0" x2="-2.5" y2="0" />	
+     <line x1="-2.5" y1="-10" x2="-2.5" y2="10" />
+     <path d="M 5 -10 A 10,15 0 0,0 5,10"  />
+     <line x1="20" y1="0" x2="2.5" y2="0" />	     
+   </g>
+</svg>

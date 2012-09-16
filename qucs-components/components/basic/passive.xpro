@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work;
+you can redistribute it and/or modify it under the terms of either
+(including special exception below):
+ a) the GNU General Public License as published by the Free Software Foundation;
+either version 2, or (at your option) any later version, or
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses
+this file, and embed this file or unaltered portion of this file
+into the document, this file does not by itself cause the resulting
+document to be covered by the GNU General Public License or cc-by-sa 3.0.
+This exception does not however invalidate any other reasons why the document
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this
+file, you may extend this exception to your version of this file, but you are not
+obligated to do so. If you do not wish to do so, delete this exception statement
+from your version.
+
+-->
+
+<library name="Passive" version="0.1.0">
+
+<displaytext>
+      <lang lang="C">Passive components</lang>
+      <lang lang="fr">Composent passif</lang>
+</displaytext>
+
+<description>
+      <lang lang="C">A passive components library</lang>
+      <lang lang="fr">Une bibliothèque de composants passifs</lang>
+</description>
+
+<component href="passive/resistor.xsym"/>
+<component href="passive/capacitor.xsym"/>
+<component href="passive/dcblock.xsym"/>
+<component href="passive/inductor.xsym"/>
+<component href="passive/dcfeed.xsym"/>
+<component href="passive/biast.xsym"/>
+<component href="passive/power1.xsym"/>
+<component href="passive/power2.xsym"/>
+<component href="passive/ground.xsym"/>
+<component href="passive/transformer.xsym"/>
+<component href="passive/three-windings-transformer.xsym"/>
+
+<component href="passive/attenuator.xsym"/>
+<component href="passive/phaseshifter.xsym"/>
+
+<component href="passive/isolator.xsym"/>
+<component href="passive/circulator.xsym"/>
+<component href="passive/gyrator.xsym"/>
+
+<component href="passive/coupler.xsym"/>
+
+<component href="passive/mutualinductor.xsym"/>
+<component href="passive/threemutualinductors.xsym"/>
+
+<component href="passive/crystal.xsym"/>
+<component href="passive/port.xsym"/>
+<component href="passive/property.xsym"/>
+<component href="passive/spice.xsym"/>
+
+<!-- HACK please remove when libraries support is done -->
+<component href="semiconductor/diode.xsym"/>
+<component href="semiconductor/npn.xsym"/>
+<component href="semiconductor/pnp.xsym"/>
+<component href="semiconductor/nmos.xsym"/>
+<component href="semiconductor/nmos4.xsym"/>
+<component href="semiconductor/pmos.xsym"/>
+<component href="semiconductor/pmos4.xsym"/>
+
+<component href="active/amplifier.xsym"/>
+<component href="active/inverter.xsym"/>
+<component href="active/opamp.xsym"/>
+
+</library>

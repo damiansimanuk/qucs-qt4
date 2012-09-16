@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Conditional Processing Module -->
+
+<!--
+
+RELAX NG Schema on SVG 1.1
+
+Copyright (C) 2002-2006  Yutaka Furubayashi (Poka-poka Dream Factory)
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation.
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL 
+YUTAKA FURUBAYASHI BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of Yutaka Furubayashi shall not be
+used in advertising or otherwise to promote the sale, use or other dealings
+in this Software without prior written authorization from Yutaka Furubayashi .
+-->
+
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+
+<!-- define datatypes -->
+
+<define name="SVG.ExtensionList.datatype">
+ <text/>
+</define>
+
+<define name="SVG.FeatureList.datatype">
+ <text/>
+</define>
+
+<!-- define contents -->
+
+<define name="SVG.Conditional.extra.class">
+ <empty/>
+</define>
+
+<define name="SVG.Conditional.class">
+ <choice>
+  <ref name="SVG.switch"/>
+  <ref name="SVG.Conditional.extra.class"/>
+ </choice>
+</define>
+
+<define name="SVG.Conditional.extra.attrib">
+ <empty/>
+</define>
+
+<define name="SVG.Conditional.attrib" combine="interleave">
+ <optional>
+  <attribute name="requiredFeatures">
+   <ref name="SVG.FeatureList.datatype"/>
+  </attribute>
+ </optional>
+ <optional>
+  <attribute name="requiredExtensions">
+   <ref name="SVG.ExtensionList.datatype"/>
+  </attribute>
+ </optional>
+ <optional>
+  <attribute name="systemLanguage">
+   <ref name="SVG.LanguageCodes.datatype"/>
+  </attribute>
+ </optional>
+ <ref name="SVG.Conditional.extra.attrib"/>
+</define>
+
+<define name="SVG.switch">
+ <element name="switch">
+ <zeroOrMore>
+  <ref name="SVG.Description.class"/>
+ </zeroOrMore>
+ <zeroOrMore>
+  <choice>
+   <ref name="SVG.svg"/>
+   <ref name="SVG.g"/>
+   <ref name="SVG.use"/>
+   <ref name="SVG.text"/>
+   <ref name="SVG.text"/>
+   <ref name="SVG.Animation.class"/>
+   <ref name="SVG.Conditional.class"/>
+   <ref name="SVG.Image.class"/>
+   <ref name="SVG.Shape.class"/>
+   <ref name="SVG.Hyperlink.class"/>
+   <ref name="SVG.Extensibility.class"/>
+  </choice>
+ </zeroOrMore>
+ <ref name="SVG.Core.attrib"/>
+ <ref name="SVG.Conditional.attrib"/>
+ <ref name="SVG.Style.attrib"/>
+ <ref name="SVG.Presentation.attrib"/>
+ <ref name="SVG.GraphicalEvents.attrib"/>
+ <ref name="SVG.External.attrib"/>
+ <optional>
+  <attribute name="transform">
+   <ref name="SVG.TransformList.datatype"/>
+  </attribute>
+ </optional>
+ </element>
+</define>
+
+
+</grammar>

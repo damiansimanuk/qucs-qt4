@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<!--
+Copyright (C) 2007 Bastien ROUCARIES <bastien.roucaries+qucs@gmail.com>
+
+Qucs components library is free work; 
+you can redistribute it and/or modify it under the terms of either 
+(including special exception below): 
+ a) the GNU General Public License as published by the Free Software Foundation; 
+either version 2, or (at your option) any later version, or 
+ b) the creative common Attribution-ShareAlike 3.0 Unported (aka cc-by-ca 3.0)
+
+As a special exception, if you create a document which uses 
+this file, and embed this file or unaltered portion of this file 
+into the document, this file does not by itself cause the resulting 
+document to be covered by the GNU General Public License or cc-by-sa 3.0. 
+This exception does not however invalidate any other reasons why the document 
+might be covered by the GNU General Public License or cc-by-sa 3.0. If you modify this 
+file, you may extend this exception to your version of this file, but you are not 
+obligated to do so. If you do not wish to do so, delete this exception statement 
+from your version.
+
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.2" baseProfile="tiny"
+     viewBox="-30 -15 60 45">
+   <defs>
+      <style type="text/css"><![CDATA[
+                                      g {
+                                      stroke: black;
+                                      fill: none;
+                                      stroke-width: 1;
+                                      }
+                                      ]]>
+      </style>
+   </defs>
+   <desc>inductor old qucs</desc>
+   <g id="capacitor" class="outline">
+     <line x1="-30" y1="0" x2="-13" y2="0" />	
+     <line x1="-13" y1="-6" x2="-13" y2="6" />
+     <line x1="-9" y1="-6" x2="-9" y2="6" />
+     <line x1="30" y1="0" x2="-9" y2="0" />	
+   </g>
+   <g  transform="rotate(90)">
+     <g id="inductor" class="outline">
+       <path d="M 0 0 
+		a 3 3 0 0 1 6 0
+		a 3 3 0 0 1 6 0
+		a 3 3 0 0 1 6 0
+		h 9"
+	     />   
+     </g>
+   </g>
+   <g id="text" class="text">
+     <text x="-9" y="20"
+	   font-familly="time"
+	   fill="black" font-family="Time"
+	   text-anchor="middle" font-size="10">
+       +∞
+     </text>
+   </g>
+   <g id="meta" class="metaenclosure">
+     <rect x="-22" y="-10" width="44" height="32"/>
+   </g>
+</svg>
