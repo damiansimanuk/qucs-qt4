@@ -37,9 +37,9 @@ VariantPair::VariantPair(const QVariant& def, const QVariant &cur)
 
 Settings::Settings()
 {
-    // The assumed default installation path of qucscomponents is
-    // <INSTALL>/share/qucs/qucscomponents
-    data["sidebarLibrary"] = VariantPair(QString(Qucs::baseDirectory() + "qucscomponents/"));
+    // The assumed default installation path of qucsc-omponents is
+    // <INSTALL>/share/qucs/qucs-components
+    data["sidebarLibrary"] = VariantPair(QString(Qucs::baseDirectory() + "qucs-components/"));
 
     data["gui/geometry"] = VariantPair(QByteArray());
     data["gui/dockPositions"] = VariantPair(QByteArray());
