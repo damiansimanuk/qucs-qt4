@@ -19,6 +19,15 @@ Makefile
 *.ind
 *.o
 config.h
+qucs-attenuator/CMakeFiles
+qucs-edit/CMakeFiles
+qucs-filter/CMakeFiles
+qucs-help/CMakeFiles
+qucs-lib/CMakeFiles
+qucs-transcalc/CMakeFiles
+qucs/dialogs/ui_savedocumentsdialog.h
+qucs/CMakeFiles
+
 qucs-attenuator/qucsattenuator
 qucs-edit/qucsedit
 qucs-filter/qucsfilter
