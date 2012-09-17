@@ -1,2 +1,0 @@
-/usr/bin/ar cr libdiagrams.a  CMakeFiles/diagrams.dir/diagram.cpp.o
-/usr/bin/ranlib libdiagrams.a

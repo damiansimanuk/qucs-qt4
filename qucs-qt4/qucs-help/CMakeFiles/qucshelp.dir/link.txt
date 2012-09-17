@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/qucshelp.dir/qucshelp.cpp.o CMakeFiles/qucshelp.dir/htmldatafetcher.cpp.o CMakeFiles/qucshelp.dir/main.cpp.o CMakeFiles/qucshelp.dir/moc_qucshelp.cxx.o  -o qucshelp -rdynamic -L/home/tim/github/qucs-qt4/qucs-qt4/qucs-tools -lQtSvg -lQtGui -lQtXml -lQtCore ../qucs-tools/libqucstools.a -Wl,-rpath,/home/tim/github/qucs-qt4/qucs-qt4/qucs-tools: 

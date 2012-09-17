@@ -1,2 +1,0 @@
-/usr/bin/ar cr libqucstools.a  CMakeFiles/qucstools.dir/global.cpp.o CMakeFiles/qucstools.dir/units.cpp.o CMakeFiles/qucstools.dir/propertygrid.cpp.o CMakeFiles/qucstools.dir/helpdialog.cpp.o CMakeFiles/qucstools.dir/moc_propertygrid.cxx.o
-/usr/bin/ranlib libqucstools.a
